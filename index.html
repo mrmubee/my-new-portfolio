@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-50 dark:bg-gray-900">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+            secondary: '#1e293b'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 scroll-smooth transition-colors duration-300">
+
+  <!-- Header with dark mode toggle and mobile menu -->
+  <header class="bg-secondary dark:bg-gray-800 text-white px-4 py-3 md:px-12 md:py-8 shadow-lg">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between max-w-7xl mx-auto">
+      <div class="flex items-center justify-between w-full md:w-auto">
+        <h1 class="text-2xl md:text-4xl font-bold">My Portfolio</h1>
+        <!-- Mobile menu button -->
+        <button id="menu-btn" class="md:hidden ml-auto text-white focus:outline-none" aria-label="Open Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex flex-wrap gap-4 md:gap-10 text-lg mt-4 md:mt-0">
+        <a href="#about" class="hover:text-primary transition">About</a>
+        <a href="#skills" class="hover:text-primary transition">Skills</a>
+        <a href="#experience" class="hover:text-primary transition">Experience</a>
+        <a href="#projects" class="hover:text-primary transition">Projects</a>
+        <a href="#contact" class="hover:text-primary transition">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="hidden md:block ml-8 px-3 py-2 rounded-lg bg-primary dark:bg-gray-700 text-white hover:bg-blue-700 dark:hover:bg-gray-600 transition">
+        Toggle Mode
+      </button>
+    </div>
+    <!-- Mobile nav -->
+    <nav id="mobile-menu" class="md:hidden hidden flex-col gap-2 mt-4 text-lg bg-secondary dark:bg-gray-800 rounded-lg shadow-lg px-4 py-4">
+      <a href="#about" class="block py-2 hover:text-primary transition">About</a>
+      <a href="#skills" class="block py-2 hover:text-primary transition">Skills</a>
+      <a href="#experience" class="block py-2 hover:text-primary transition">Experience</a>
+      <a href="#projects" class="block py-2 hover:text-primary transition">Projects</a>
+      <a href="#contact" class="block py-2 hover:text-primary transition">Contact</a>
+      <button id="theme-toggle-mobile" class="w-full mt-2 px-3 py-2 rounded-lg bg-primary dark:bg-gray-700 text-white hover:bg-blue-700 dark:hover:bg-gray-600 transition">
+        Toggle Mode
+      </button>
+    </nav>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-8 md:px-12 md:py-16">
+    <!-- Hero Section -->
+    <section id="hero" class="flex flex-col md:flex-row items-center justify-between gap-10 mb-20">
+      <div class="flex-1 text-center md:text-left">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-primary">
+          Hi, I'm Mustapha
+        </h1>
+        <p class="text-xl md:text-2xl mb-6 text-gray-700 dark:text-gray-300">
+          A creative web developer crafting modern, responsive, and accessible websites.
+        </p>
+        <a href="#contact" class="inline-block bg-primary text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+          Let's Connect
+        </a>
+      </div>
+      <div class="flex-1 flex justify-center md:justify-end">
+        <img src="images/profile.jpg" alt="Mustapha Profile" class="w-40 h-40 md:w-64 md:h-64 rounded-full object-cover shadow-2xl border-4 border-primary dark:border-gray-700" />
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="mb-16">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-primary">About Me</h2>
+      <div class="flex flex-col md:flex-row md:items-center gap-8">
+        <img src="./images/profile.jpg" alt="Profile" class="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover shadow-lg mb-6 md:mb-0">
+        <p class="text-lg md:text-xl leading-relaxed flex-1">
+          Hi! I'm a passionate web developer focused on building modern, responsive, and accessible websites. I love solving problems, learning new technologies, and collaborating with creative teams.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Grid Section -->
+    <section id="skills" class="mb-16">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-primary">Skills</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-4 flex flex-col items-center">
+          <img src="./images/html.png" alt="HTML5" class="w-10 h-10 mb-2">
+          <span class="font-medium">HTML5</span>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-4 flex flex-col items-center">
+          <img src="./images/css.png" alt="CSS3" class="w-10 h-10 mb-2">
+          <span class="font-medium">CSS3</span>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-4 flex flex-col items-center">
+          <img src="./images/javascript.png" alt="JavaScript" class="w-10 h-10 mb-2">
+          <span class="font-medium">JavaScript</span>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-4 flex flex-col items-center">
+          <img src="./images/tailwincss.png" alt="Tailwind CSS" class="w-10 h-10 mb-2">
+          <span class="font-medium">Tailwind CSS</span>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-4 flex flex-col items-center">
+          <img src="./images/react.png" alt="React" class="w-10 h-10 mb-2">
+          <span class="font-medium">React</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="mb-16">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-primary">Experience</h2>
+      <div class="relative pl-6 md:pl-12">
+        <!-- Timeline vertical line -->
+        <div class="absolute left-3 md:left-6 top-0 h-full w-1 bg-primary dark:bg-blue-900 rounded"></div>
+        <!-- Timeline items -->
+        <div class="mb-10 relative">
+          <div class="absolute -left-1 md:-left-3 top-2 w-4 h-4 bg-primary dark:bg-blue-900 rounded-full border-2 border-white dark:border-gray-800"></div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6 ml-8 md:ml-16">
+            <h3 class="font-bold text-lg md:text-xl mb-2">Frontend Developer <span class="text-primary">@ ABC Tech</span></h3>
+            <p class="text-base md:text-lg mb-1">Jan 2023 - Present</p>
+            <ul class="list-disc pl-5 text-base md:text-lg">
+              <li>Developed responsive web apps using React and Tailwind CSS.</li>
+              <li>Collaborated with designers and backend developers.</li>
+              <li>Optimized performance and accessibility.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mb-10 relative">
+          <div class="absolute -left-1 md:-left-3 top-2 w-4 h-4 bg-primary dark:bg-blue-900 rounded-full border-2 border-white dark:border-gray-800"></div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6 ml-8 md:ml-16">
+            <h3 class="font-bold text-lg md:text-xl mb-2">Web Designer <span class="text-primary">@ XYZ Studio</span></h3>
+            <p class="text-base md:text-lg mb-1">Jun 2021 - Dec 2022</p>
+            <ul class="list-disc pl-5 text-base md:text-lg">
+              <li>Designed and built mobile-friendly websites for clients.</li>
+              <li>Created wireframes and prototypes.</li>
+              <li>Ensured cross-browser compatibility.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="mb-16">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-primary text-center">Testimonials</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col items-center text-center">
+          <img src="./images/testimonial1.png" alt="Client 1" class="w-16 h-16 rounded-full object-cover mb-4 border-2 border-primary dark:border-gray-700">
+          <p class="text-lg italic mb-2">"Mustapha is a fantastic developer! He delivered our project on time and exceeded our expectations."</p>
+          <span class="font-semibold text-primary">- Sarah O., CEO at StartupX</span>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col items-center text-center">
+          <img src="./images/testimonial2.png" alt="Client 2" class="w-16 h-16 rounded-full object-cover mb-4 border-2 border-primary dark:border-gray-700">
+          <p class="text-lg italic mb-2">"Working with Mustapha was a pleasure. His attention to detail and creativity are top-notch."</p>
+          <span class="font-semibold text-primary">- James T., Designer at CreativesHub</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section (Cards) -->
+    <section id="projects" class="mb-16">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-primary">Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <!-- Accessible Project Card 1 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:scale-105 transition p-6 flex flex-col project-card" tabindex="0" aria-label="Accessible Portfolio Website Project">
+          <img src="./images/project1.png" alt="Screenshot of Accessible Portfolio Website" class="w-full h-40 object-cover rounded-lg mb-4" />
+          <h3 class="font-bold text-lg mb-2">Accessible Portfolio Website</h3>
+          <p class="flex-1 mb-2 text-gray-700 dark:text-gray-300">
+            A personal portfolio site built with semantic HTML, ARIA labels, keyboard navigation, and high-contrast mode for users with visual impairments.
+          </p>
+          <a href="https://mustapha-portfolio-accessible.netlify.app" target="_blank" rel="noopener" class="text-primary underline font-semibold" aria-label="View Accessible Portfolio Website (opens in new tab)">
+            View Project
+          </a>
+        </div>
+        <!-- Accessible Project Card 2 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:scale-105 transition p-6 flex flex-col project-card" tabindex="0" aria-label="Inclusive Blog Platform Project">
+          <img src="./images/project2.png" alt="Screenshot of Inclusive Blog Platform" class="w-full h-40 object-cover rounded-lg mb-4" />
+          <h3 class="font-bold text-lg mb-2">Inclusive Blog Platform</h3>
+          <p class="flex-1 mb-2 text-gray-700 dark:text-gray-300">
+            A blog platform featuring readable fonts, skip-to-content links, alt text for images, and responsive design for all devices and assistive technologies.
+          </p>
+          <a href="https://mustapha-inclusive-blog.netlify.app" target="_blank" rel="noopener" class="text-primary underline font-semibold" aria-label="View Inclusive Blog Platform (opens in new tab)">
+            View Project
+          </a>
+        </div>
+        <!-- Accessible Project Card 3 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:scale-105 transition p-6 flex flex-col project-card" tabindex="0" aria-label="Accessible Task Manager App Project">
+          <img src="./images/project3.png" alt="Screenshot of Accessible Task Manager App" class="w-full h-40 object-cover rounded-lg mb-4" />
+          <h3 class="font-bold text-lg mb-2">Accessible Task Manager App</h3>
+          <p class="flex-1 mb-2 text-gray-700 dark:text-gray-300">
+            A task manager web app with voice-over support, clear focus states, and color-blind friendly palette, ensuring everyone can organize tasks easily.
+          </p>
+          <a href="https://mustapha-accessible-tasks.netlify.app" target="_blank" rel="noopener" class="text-primary underline font-semibold" aria-label="View Accessible Task Manager App (opens in new tab)">
+            View Project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section (Netlify-ready) -->
+    <section id="contact" class="mb-8">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-primary">Contact</h2>
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
+        <form name="contact" method="POST" data-netlify="true" class="space-y-6">
+          <input type="hidden" name="form-name" value="contact">
+          <div>
+            <label class="block mb-2 font-medium" for="name">Name</label>
+            <input type="text" name="name" id="name" class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-900 dark:border-gray-700" placeholder="Your name" required>
+          </div>
+          <div>
+            <label class="block mb-2 font-medium" for="email">Email</label>
+            <input type="email" name="email" id="email" class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-900 dark:border-gray-700" placeholder="Your email" required>
+          </div>
+          <div>
+            <label class="block mb-2 font-medium" for="message">Message</label>
+            <textarea name="message" id="message" rows="5" class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-900 dark:border-gray-700" placeholder="Your message" required></textarea>
+          </div>
+          <button type="submit" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Light/Dark mode toggle
+    function setThemeToggle(btnId) {
+      const btn = document.getElementById(btnId);
+      if (btn) {
+        btn.addEventListener('click', () => {
+          document.documentElement.classList.toggle('dark');
+          if(document.documentElement.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+          } else {
+            localStorage.setItem('theme', 'light');
+          }
+        });
+      }
+    }
+    setThemeToggle('theme-toggle');
+    setThemeToggle('theme-toggle-mobile');
+    if(localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
